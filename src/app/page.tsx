@@ -1,3 +1,7 @@
+'use client'
+
+import Link from 'next/link'
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100">
@@ -12,12 +16,12 @@ export default function HomePage() {
               </h1>
             </div>
             <div className="hidden md:flex space-x-6">
-              <a href="#" className="text-amber-700 hover:text-amber-900 font-medium">Home</a>
-              <a href="#" className="text-amber-700 hover:text-amber-900 font-medium">Features</a>
-              <a href="#" className="text-amber-700 hover:text-amber-900 font-medium">Pricing</a>
-              <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+              <Link href="/" className="text-amber-700 hover:text-amber-900 font-medium">Home</Link>
+              <a href="#features" className="text-amber-700 hover:text-amber-900 font-medium">Features</a>
+              <Link href="/dashboard" className="text-amber-700 hover:text-amber-900 font-medium">Dashboard</Link>
+              <Link href="/contract/new" className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
                 Start Agreement
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -38,17 +42,17 @@ export default function HomePage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors shadow-lg hover:shadow-xl">
+            <Link href="/contract/new" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors shadow-lg hover:shadow-xl inline-block">
               🚀 Start Your Agreement
-            </button>
-            <button className="bg-white hover:bg-amber-50 text-amber-700 border-2 border-amber-600 px-8 py-4 rounded-xl text-lg font-semibold transition-colors">
-              👀 Watch Demo
-            </button>
+            </Link>
+            <Link href="/sign/demo" className="bg-white hover:bg-amber-50 text-amber-700 border-2 border-amber-600 px-8 py-4 rounded-xl text-lg font-semibold transition-colors inline-block">
+              👀 Try Signing Experience
+            </Link>
           </div>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mt-20">
+        <div id="features" className="grid md:grid-cols-3 gap-8 mt-20">
           <div className="bg-white rounded-xl p-6 shadow-lg border border-amber-200">
             <div className="text-4xl mb-4">✍️</div>
             <h3 className="text-xl font-bold text-amber-900 mb-2" style={{fontFamily: "'Kalam', cursive"}}>
@@ -99,17 +103,37 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Demo Section */}
+        {/* Quick Test Links */}
         <div className="mt-16 text-center">
-          <div className="bg-amber-100 rounded-xl p-8 border-2 border-amber-300">
-            <h3 className="text-2xl font-bold text-amber-900 mb-4" style={{fontFamily: "'Kalam', cursive"}}>
-              🎉 You're seeing Napkin Contracts!
+          <div className="bg-blue-100 rounded-xl p-8 border-2 border-blue-300">
+            <h3 className="text-2xl font-bold text-blue-900 mb-4" style={{fontFamily: "'Kalam', cursive"}}>
+              🧪 Test All Features
             </h3>
-            <p className="text-amber-800 mb-4">
-              This means your page.tsx file is working correctly. The default Next.js page has been replaced!
+            <p className="text-blue-800 mb-6">
+              Try out all the key features of your Napkin Contracts MVP:
             </p>
-            <p className="text-sm text-amber-700">
-              Next step: Add the contract creation flow and other features from the roadmap.
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/contract/new" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium">
+                📝 Create Contract
+              </Link>
+              <Link href="/sign/demo" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium">
+                ✍️ Sign Document
+              </Link>
+              <Link href="/dashboard" className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium">
+                📊 View Dashboard
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Success Message */}
+        <div className="mt-8 text-center">
+          <div className="bg-green-100 rounded-xl p-6 border-2 border-green-300">
+            <h3 className="text-2xl font-bold text-green-900 mb-2" style={{fontFamily: "'Kalam', cursive"}}>
+              🎉 MVP is Complete!
+            </h3>
+            <p className="text-green-800">
+              All core features are working: Contract Creation, Signing, and Management!
             </p>
           </div>
         </div>
